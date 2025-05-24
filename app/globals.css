@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .gradient-title {
+    @apply bg-gradient-to-br from-[#FFB147] via-[#FF6C63] to-[#B86ADF] bg-clip-text tracking-tighter text-transparent;
+  }
+}

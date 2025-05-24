@@ -1,30 +1,61 @@
+"use client";
 import { FaInstagram, FaGithub, FaLinkedinIn } from "react-icons/fa";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Sidenav = () => {
+  const pathname = usePathname();
+  const navitems = [
+    {
+      title: "HOME",
+      path: "/",
+    },
+    {
+      title: "ABOUT",
+      path: "/about",
+    },
+    {
+      title: "EXPERIENCES",
+      path: "/experiences",
+    },
+    {
+      title: "PROJECTS",
+      path: "/projects",
+    },
+    {
+      title: "CONTACT",
+      path: "/contact",
+    },
+  ];
   return (
-    <aside className="w-64 h-screen bg-[#121111] text-white flex flex-col justify-between py-8 px-6">
+    <aside className="fixed top-0 left-0 w-64 h-screen bg-[#121111] text-white flex flex-col justify-between py-8 px-6">
       <div>
-        <h1 className="text-2xl font-bold mb-24 font-ibm-plex-sans">
-          Supreet.
-        </h1>
-        <nav className="space-y-5">
-          {["HOME", "ABOUT", "EXPERENCIES", "WORKS", "CONTACT"].map((item) => (
-            <Link
-              key={item}
-              href={`/${
-                item.toLowerCase() === "home" ? "" : item.toLowerCase()
+        <Link href="/">
+          <h1 className="text-2xl font-bold mb-24 font-ibm-plex-sans">
+            Supreet.
+          </h1>
+        </Link>
+        <nav className="space-y-4">
+          {navitems.map(({ title, path }) => {
+            const isActive = pathname === path;
+            return (
+              <Link
+                key={title}
+                href={path}
+                className={`relative block text-lg tracking-wide transition rounded-xl px-4 py-2 w-full text-left
+              ${
+                isActive
+                  ? "bg-gradient-to-r from-[#FFB147] via-[#FF6C63] to-[#B86ADF] text-white font-normal"
+                  : "text-white hover:text-yellow-400"
               }`}
-              className={`block text-lg font-normal tracking-wide hover:text-yellow-400 transition ${
-                item === "HOME" ? "text-white font-extrabold relative" : ""
-              }`}
-            >
-              {item}
-              {item === "HOME" && (
-                <span className="absolute left-0 bottom-[-4px] w-4 h-[2px] bg-yellow-400 animate-pulse" />
-              )}
-            </Link>
-          ))}
+              >
+                {isActive && (
+                  <span className="absolute inset-0 rounded-xl p-[2px] from-[#FFB147] via-[#FF6C63] to-[#B86ADF] z-[-1]" />
+                )}
+                <span className="relative z-10">{title}</span>
+              </Link>
+            );
+          })}
         </nav>
       </div>
 
@@ -42,7 +73,7 @@ const Sidenav = () => {
         </div>
         <p className="text-sm text-gray-400 leading-4">
           Copyright ©2025 Supreet <br />
-          Patel. All right reserved.
+          Patel. All rights reserved.
         </p>
       </div>
     </aside>
