@@ -21,7 +21,7 @@ const MainPage = () => {
           <span className="font-bold italic">Odisha</span>
         </p>
 
-        <button className="px-5 py-3 bg-black text-white flex items-center gap-2 hover:bg-gray-900 transition">
+        <button className="px-5 py-5 bg-black text-white flex items-center gap-2 hover:bg-gray-900 transition">
           Let's talk with me
           <span className="inline-block bg-gradient-to-tr from-[#FFB147] via-[#FF6C63] to-[#B86ADF]">
             <MdArrowOutward size={20} />

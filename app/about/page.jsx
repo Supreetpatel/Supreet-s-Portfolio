@@ -1,4 +1,5 @@
 import Sidenav from "@/components/SideNav";
+import Link from "next/link";
 import React from "react";
 import {
   MdArrowOutward,
@@ -20,7 +21,7 @@ const AboutUsPage = () => {
             </p>
             <h1 className="text-5xl font-bold">WELCOME TO...</h1>
           </div>
-          <div className="w-60 h-60 mb-5 rounded-full bg-gradient-to-r from-orange-400 via-pink-500 to-purple-500 ml-10" />
+          <div className="w-60 h-60 mb-5 rounded-full bg-gradient-to-tr from-[#FFB147] via-[#FF6C63] to-[#B86ADF] ml-10" />
           <div className="ml-10">
             <h2 className="text-4xl font-bold gradient-title mb-2">
               SUPREET PATEL
@@ -31,7 +32,7 @@ const AboutUsPage = () => {
               <span className="italic">Odisha</span>
             </p>
           </div>
-          <a
+          <Link
             href="/cv.pdf"
             download
             className="text-base flex ml-[82px] gap-2 p-3 text-black font-semibold bg-gray-200 rounded-md transition duration-300 hover:bg-gray-300 w-fit"
@@ -40,7 +41,7 @@ const AboutUsPage = () => {
             <span className="inline-block bg-gradient-to-tr from-[#FFB147] via-[#FF6C63] to-[#B86ADF] ml-1">
               <MdArrowOutward className="text-white" size={20} />
             </span>
-          </a>
+          </Link>
         </div>
         <div className="w-1/2 mt-10 md:mt-0 space-y-6">
           <div className="space-y-3 text-lg grid grid-cols-2 gap-4 italic">
@@ -85,7 +86,7 @@ const AboutUsPage = () => {
               </p>
             </div>
           </div>
-          <div className="bg-black text-white p-6 rounded-md text-lg italic w-fit">
+          <div className="bg-black text-white p-6 rounded-md text-lg italic w-fit mt-5">
             <p>
               <span className="text-3xl text-white mr-1">“</span>
               In a world full of static, I strive to build with motion and
